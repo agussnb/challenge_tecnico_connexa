@@ -1,0 +1,61 @@
+{
+  "navbar": {
+    "home": "Home",
+    "tasks": "Tasks",
+    "buttons": {
+      "spanish": "SPA",
+      "english": "ENG"
+    }
+  },
+  "form": {
+    "titleLabel": "Title",
+    "descriptionLabel": "Description",
+    "dueDateLabel": "Due Date",
+    "priorityLabel": "Priority",
+    "priorityLow": "Low",
+    "priorityMedium": "Medium",
+    "priorityHigh": "High",
+    "statusLabel": "Status",
+    "statusPending": "Pending",
+    "statusInProgress": "In Progress",
+    "statusCompleted": "Completed",
+    "submitButton": "Submit",
+    "selectOption": "Select an option",
+    "errors": {
+      "required": "Required field",
+      "invalidPriority": "Invalid priority",
+      "invalidStatus": "Invalid status",
+      "titleRequired": "Title is required"
+    },
+    "alerts":{
+    "saved": "Task saved",
+    "savedDescription": "Task saved succesfully!",
+    "edited": "Task edited",
+    "editedDescription": "Task edited succesfully!"
+  }
+  },
+  "buttons": {
+    "spanish": "SPA",
+    "english": "ENG",
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "orderByPriority": "Order by priority",
+    "orderByStatus": "Order by status",
+    "orderByDueDate": "Order by due date"
+  },
+  "errors": {
+    "required": "Required field",
+    "invalidPriority": "Invalid priority",
+    "invalidStatus": "Invalid status",
+    "titleRequired": "Title is required",
+    "taskErrorMessage":"Tasks must exist before you try to enter /tasks endpoint"
+  },
+  "taskList": {
+    "taskTitle": "Task Title",
+    "priorityLabel": "Priority",
+    "statusLabel": "Status",
+    "dueDateLabel":"Due Date"
+  }
+}

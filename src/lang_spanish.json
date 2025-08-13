@@ -1,0 +1,61 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "tasks": "Tareas",
+    "buttons": {
+      "spanish": "ESP",
+      "english": "ING"
+    }
+  },
+  "form": {
+    "titleLabel": "Título",
+    "descriptionLabel": "Descripción",
+    "dueDateLabel": "Fecha de vencimiento",
+    "priorityLabel": "Prioridad",
+    "priorityLow": "Baja",
+    "priorityMedium": "Media",
+    "priorityHigh": "Alta",
+    "statusLabel": "Estado",
+    "statusPending": "Pendiente",
+    "statusInProgress": "En progreso",
+    "statusCompleted": "Completada",
+    "submitButton": "Enviar",
+    "selectOption": "Selecciona una opción",
+    "errors": {
+      "required": "Campo requerido",
+      "invalidPriority": "Prioridad inválida",
+      "invalidStatus": "Estado inválido",
+      "titleRequired": "El título es obligatorio"
+    },
+    "alerts":{
+    "saved": "Tarea guardada",
+    "savedDescription": "Tarea guardada correctamente!",
+    "edited": "Tarea editada",
+    "editedDescription": "Tarea editada correctamente!"
+  }
+  },
+  "buttons": {
+    "spanish": "ESP",
+    "english": "ING",
+    "add": "Agregar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "save": "Guardar",
+    "orderByPriority": "Ordenar por prioridad",
+    "orderByStatus": "Ordenar por estado",
+    "orderByDueDate": "Ordenar por fecha de limite"
+  },
+  "errors": {
+    "required": "Campo requerido",
+    "invalidPriority": "Prioridad inválida",
+    "invalidStatus": "Estado inválido",
+    "titleRequired": "El título es obligatorio",
+    "taskErrorMessage":"Deben haber tareas antes de poder acceder al endpoint /tasks"
+  },
+  "taskList": {
+    "taskTitle": "Tarea",
+    "priorityLabel": "Prioridad",
+    "statusLabel": "Estado",
+    "dueDateLabel":  "Fecha limite"
+  }
+}
