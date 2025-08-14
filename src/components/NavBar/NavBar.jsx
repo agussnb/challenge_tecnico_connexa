@@ -1,6 +1,9 @@
 import './NavBar.css'
 import { Button } from '../'
-export const NavBar = ({texts, changeLanguage}) => {
+import { useLanguage } from '../contexts/LanguageContext'
+
+export const NavBar = () => {
+    const { texts, changeLanguage } = useLanguage()
 
     return (
         <nav className="navbar">
@@ -9,8 +12,8 @@ export const NavBar = ({texts, changeLanguage}) => {
             </div>
 
             <ul className="navbar__links">
-                <li><a href="/">{texts.home}</a></li>
-                <li><a href="/tasks">{texts.tasks}</a></li>
+                <li><a href="/">{texts.navbar.home}</a></li>
+                <li><a href="/tasks">{texts.navbar.tasks}</a></li>
             </ul>
 
             <div className="navbar__actions">
