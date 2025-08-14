@@ -80,3 +80,13 @@
 .filter select option {
     padding: 0.5rem;
 }
+.favoriteStar {
+    cursor: pointer;       
+    font-size: 3rem;     
+    color: rgb(0, 0, 0);          
+    transition: color 0.2s ease;  
+}
+
+.favoriteStar.favorite {
+    color: gold;           
+}

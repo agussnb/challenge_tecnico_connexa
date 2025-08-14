@@ -16,12 +16,21 @@ function App() {
   const [taskBeingEdited, setTaskBeingEdited] = useState(null)
   const [tasksLoaded, setTasksLoaded] = useState(false)
   const [statusFilter, setStatusFilter] = useState('all')
+  const [favorite, setFavorite] = useState([])
+  const [darkMode, setDarkMode] = useState(()=>{
+    return localStorage.getItem('screenMode' || 'dark')
+  })
   const texts = language === 'es' ? langSpanish : langEnglish;
 
   const changeLanguage = (lang) => {
     setLanguage(lang);
     localStorage.setItem('language', lang);
   };
+
+  const changeMode = (mode) =>{
+    setDarkMode(mode)
+    localStorage.setItem('screenMode',mode)
+  }
 
   useEffect(() => {
     try {
@@ -46,6 +55,11 @@ function App() {
       setTasksLoaded(false)
     }
   }, [tasks]);
+
+  useEffect(() => {
+  document.body.className = darkMode === 'dark' ? 'dark' : 'light';
+}, [darkMode]);
+
 
   const addTask = (task) => {
     const newTask = { ...task, id: crypto.randomUUID() };
@@ -126,10 +140,21 @@ function App() {
 
   }
 
+  const saveAsFavorite = (taskId) => {
+  setFavorite(prev =>
+    prev.includes(taskId)
+      ? prev.filter(id => id !== taskId)  
+      : [...prev, taskId]                
+  );
+};
+
+
   return (
     <BrowserRouter>
-      <NavBar texts={texts.navbar} changeLanguage={changeLanguage} />
-      <Router tasks={tasks} addTask={addTask} onDelete={handleDeleteTask} texts={texts} onEdit={handleEditTask} onEditTask={editTask} orderByPriority={orderByPriority} orderByStatus={orderByStatus} tasksLoaded={tasksLoaded} filterByStatus={filterByStatus} statusFilter={statusFilter}/>
+      <div className={darkMode === 'dark' ? 'dark' : 'light'}>
+        <NavBar texts={texts.navbar} changeLanguage={changeLanguage} changeMode={changeMode} darkMode={darkMode}/>
+        <Router tasks={tasks} addTask={addTask} onDelete={handleDeleteTask} texts={texts} onEdit={handleEditTask} onEditTask={editTask} orderByPriority={orderByPriority} orderByStatus={orderByStatus} tasksLoaded={tasksLoaded} filterByStatus={filterByStatus} statusFilter={statusFilter} saveAsFavorite={saveAsFavorite} favorite={favorite}/>
+      </div>
     </BrowserRouter>
   );
 }

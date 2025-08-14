@@ -3,7 +3,7 @@ import { Button } from '../../components';
 
 import { useNavigate } from 'react-router-dom';
 
-export const TaskList = ({ tasks, texts, orderByPriority, orderByStatus, onDelete, onEdit, filterByStatus ,statusFilter}) => {
+export const TaskList = ({ tasks, texts, orderByPriority, orderByStatus, onDelete, onEdit, filterByStatus ,statusFilter,saveAsFavorite, favorite}) => {
 
     const priorityTranslations = {
         low: texts.form.priorityLow,
@@ -46,9 +46,11 @@ export const TaskList = ({ tasks, texts, orderByPriority, orderByStatus, onDelet
             </div>
             <div className="task-list-container">
                 {tasks
-                    .filter(task => statusFilter === 'all' || task.status === statusFilter)
-                    .map((task, index) => (
+                    .filter(task => statusFilter === 'all' || task.status === statusFilter).sort((a,b)=>favorite.includes(b.id)-favorite.includes(a.id)).map((task, index) => (
                         <div key={index} className="card">
+                            <span className={`favoriteStar ${favorite.includes(task.id) ? 'favorite' : ''}`} onClick={() => saveAsFavorite(task.id)}>
+                            {favorite.includes(task.id) ? '★' : '☆'}
+                            </span>
                             <h3>{texts.taskList.taskTitle}: {task.title}</h3>
                             <p>{task.description}</p>
                             <hr />
