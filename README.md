@@ -18,6 +18,7 @@ Esta aplicación fue desarrollada siguiendo la consigna del challenge, y existe 
 - Eliminar tareas.
 - Cambiar el idioma de la aplicación entre Español e Inglés.
 - Ordenar tareas por prioridad y estado.
+- Filtrar tareas por estado
 - Validación de formulario usando **React Hook Form** y **Zod**.
 - Persistencia de tareas en `localStorage`.
 
