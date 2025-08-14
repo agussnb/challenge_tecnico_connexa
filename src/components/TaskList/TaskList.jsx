@@ -6,7 +6,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { useEffect } from 'react';
 
 export const TaskList = () => {
-  const { tasks, orderByPriority, orderByStatus, deleteTask, setTaskBeingEdited , tasksLoaded, filterByStatus, statusFilter} = useTasks();
+  const { tasks, orderByPriority, orderByStatus, deleteTask, setTaskBeingEdited , tasksLoaded, filterByStatus, statusFilter, favorite, saveAsFavorite} = useTasks();
   const { texts } = useLanguage();
 
   const navigate = useNavigate();
@@ -54,8 +54,11 @@ export const TaskList = () => {
                 </select>
         </div>
       <div className="task-list-container">
-        {tasks.filter(task => statusFilter === 'all' || task.status === statusFilter).map((task, index) => (
+        {tasks.filter(task => statusFilter === 'all' || task.status === statusFilter).sort((a,b)=>favorite.includes(b.id)-favorite.includes(a.id)).map((task, index) => (
           <div key={index} className="card">
+            <span className={`favoriteStar ${favorite.includes(task.id) ? 'favorite' : ''}`} onClick={() => saveAsFavorite(task.id)}>
+            {favorite.includes(task.id) ? '★' : '☆'}
+            </span>
             <h3>{texts.taskList.taskTitle}: {task.title}</h3>
             <p>{task.description}</p>
             <hr />

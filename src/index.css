@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,14 +13,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
 body {
   margin: 0;
@@ -66,3 +58,75 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.dark {
+  background-color: #121212;
+  color: #fff;
+}
+
+.dark button {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark .card{
+  background-color: #b2b2b2;
+}
+
+.dark .navbar{
+  background-color: #1b1b1b;
+  color: #fff;
+}
+
+.dark .navbar h1{
+  color: #fff;
+}
+
+.dark .navbar span{
+  color: #fff;
+  cursor: pointer;
+}
+
+.dark .navbar a{
+  color:#fff;
+}
+
+.light {
+  background-color: #fff;
+  color: #000;
+}
+
+.light button {
+  background-color: #0f0f0f;
+  color: #ffefef;
+}
+
+.light .card{
+  background-color: #151414;
+  color: #fff; 
+}
+
+.light .card p{
+  color: #ffefef;
+}
+
+.light p{
+  color: #fff;
+}
+
+.light .card .favoriteStar{
+  color: #faf8f8;
+}
+
+.light form{
+  background-color: #0a0a0a;
+  color: #faf8f8;
+}
+
+.light form label{
+  color: #fff;
+}
+
+
+
+

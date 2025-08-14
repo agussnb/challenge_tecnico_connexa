@@ -16,7 +16,9 @@ Esta aplicación fue desarrollada siguiendo la consigna del challenge, y existe 
 - Crear nuevas tareas con título, descripción, fecha de vencimiento, prioridad y estado.
 - Editar tareas existentes.
 - Eliminar tareas.
+- Agregar tareas a favoritos
 - Cambiar el idioma de la aplicación entre Español e Inglés.
+- Cambiar el modo de la aplicacion entre Oscuro y Claro
 - Ordenar tareas por prioridad y estado.
 - Filtrar tareas por estado
 - Validación de formulario usando **React Hook Form** y **Zod**.
