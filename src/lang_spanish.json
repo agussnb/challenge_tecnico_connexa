@@ -43,7 +43,8 @@
     "save": "Guardar",
     "orderByPriority": "Ordenar por prioridad",
     "orderByStatus": "Ordenar por estado",
-    "orderByDueDate": "Ordenar por fecha de limite"
+    "orderByDueDate": "Ordenar por fecha de limite",
+    "statusFilter": "Filtrar por estado"
   },
   "errors": {
     "required": "Campo requerido",
@@ -57,5 +58,12 @@
     "priorityLabel": "Prioridad",
     "statusLabel": "Estado",
     "dueDateLabel":  "Fecha limite"
+  },
+  "selectOptions":{
+    "completed":"Completadas",
+    "inProgress": "En progreso",
+    "pending": "Pendientes",
+    "all": "Todas",
+    "label": "Filtro de estado"
   }
 }

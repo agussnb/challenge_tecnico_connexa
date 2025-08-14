@@ -15,6 +15,7 @@ function App() {
   const [originalTasks, setOriginalTasks] = useState([])
   const [taskBeingEdited, setTaskBeingEdited] = useState(null)
   const [tasksLoaded, setTasksLoaded] = useState(false)
+  const [statusFilter, setStatusFilter] = useState('all')
   const texts = language === 'es' ? langSpanish : langEnglish;
 
   const changeLanguage = (lang) => {
@@ -23,9 +24,15 @@ function App() {
   };
 
   useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    setTasks(storedTasks);
-  }, []);
+    try {
+      const stored = localStorage.getItem('tasks');
+      const parsedTasks = stored ? JSON.parse(stored) : [];
+      setTasks(Array.isArray(parsedTasks) ? parsedTasks : []);
+    } catch (error) {
+      console.error('Error parsing tasks from localStorage', error);
+      setTasks([]);
+    }
+}, []);
 
   useEffect(() => {
     setOriginalTasks(tasks);
@@ -114,10 +121,15 @@ function App() {
     setTasks(sortedTasks)
   }
 
+  const filterByStatus = (selectedStatus) => {
+    setStatusFilter(selectedStatus)
+
+  }
+
   return (
     <BrowserRouter>
       <NavBar texts={texts.navbar} changeLanguage={changeLanguage} />
-      <Router tasks={tasks} addTask={addTask} onDelete={handleDeleteTask} texts={texts} onEdit={handleEditTask} onEditTask={editTask} orderByPriority={orderByPriority} orderByStatus={orderByStatus} tasksLoaded={tasksLoaded}/>
+      <Router tasks={tasks} addTask={addTask} onDelete={handleDeleteTask} texts={texts} onEdit={handleEditTask} onEditTask={editTask} orderByPriority={orderByPriority} orderByStatus={orderByStatus} tasksLoaded={tasksLoaded} filterByStatus={filterByStatus} statusFilter={statusFilter}/>
     </BrowserRouter>
   );
 }

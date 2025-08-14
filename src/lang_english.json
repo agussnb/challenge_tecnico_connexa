@@ -43,7 +43,8 @@
     "save": "Save",
     "orderByPriority": "Order by priority",
     "orderByStatus": "Order by status",
-    "orderByDueDate": "Order by due date"
+    "orderByDueDate": "Order by due date",
+    "statusFilter": "Filter by status"
   },
   "errors": {
     "required": "Required field",
@@ -57,5 +58,12 @@
     "priorityLabel": "Priority",
     "statusLabel": "Status",
     "dueDateLabel":"Due Date"
+  },
+  "selectOptions":{
+    "completed":"Completed",
+    "inProgress": "In progress",
+    "pending": "Pending",
+    "all": "All",
+    "label": "Status filter"
   }
 }
