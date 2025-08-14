@@ -65,7 +65,7 @@ export const TasksProvider = ({ children }) => {
     const deleteTask = (id) => {
         const updated = tasks.filter((task) => task.id !== id)
         setTasks(updated)
-        localStorage.setItem('tasks', updated)
+        localStorage.setItem('tasks', JSON.stringify(updated))
     }
 
     const orderByPriority = () => {

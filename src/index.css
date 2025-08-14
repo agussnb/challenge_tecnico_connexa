@@ -69,6 +69,10 @@ button:focus-visible {
   color: #fff;
 }
 
+.dark button:hover{
+  background-color: #2f2e2e;
+}
+
 .dark .card{
   background-color: #b2b2b2;
 }
