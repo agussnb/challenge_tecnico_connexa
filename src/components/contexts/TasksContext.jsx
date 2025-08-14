@@ -10,6 +10,7 @@ export const TasksProvider = ({children}) =>{
     const [tasksLoaded, setTasksLoaded] = useState(false)
     const [prioritySortMode, setPrioritySortMode] = useState('none')
     const [statusSortMode, setStatusSortMode] = useState('none')
+    const [statusFilter, setStatusFilter] = useState('all')
     
     useEffect(() => {
         const stored = localStorage.getItem('tasks');
@@ -87,6 +88,10 @@ export const TasksProvider = ({children}) =>{
         setTasks(sortedTasks)
     }
 
+    const filterByStatus = (selectedStatus) => {
+        setStatusFilter(selectedStatus)
+  }
+
     return (
     <TasksContext.Provider
       value={{
@@ -99,6 +104,8 @@ export const TasksProvider = ({children}) =>{
         deleteTask,
         orderByPriority,
         orderByStatus,
+        filterByStatus,
+        statusFilter
       }}
     >
       {children}

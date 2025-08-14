@@ -57,5 +57,12 @@
     "priorityLabel": "Prioridad",
     "statusLabel": "Estado",
     "dueDateLabel":  "Fecha limite"
+  },
+  "selectOptions":{
+    "completed":"Completada",
+    "inProgress": "En progreso",
+    "pending": "Pendiente",
+    "all": "Todas",
+    "label": "Filtro de estado"
   }
 }

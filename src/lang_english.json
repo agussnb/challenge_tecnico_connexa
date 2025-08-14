@@ -57,5 +57,12 @@
     "priorityLabel": "Priority",
     "statusLabel": "Status",
     "dueDateLabel":"Due Date"
+  },
+    "selectOptions":{
+    "completed":"Completed",
+    "inProgress": "In progress",
+    "pending": "Pending",
+    "all": "All",
+    "label": "Status filter"
   }
 }

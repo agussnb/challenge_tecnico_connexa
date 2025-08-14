@@ -6,7 +6,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { useEffect } from 'react';
 
 export const TaskList = () => {
-  const { tasks, orderByPriority, orderByStatus, deleteTask, setTaskBeingEdited , tasksLoaded} = useTasks();
+  const { tasks, orderByPriority, orderByStatus, deleteTask, setTaskBeingEdited , tasksLoaded, filterByStatus, statusFilter} = useTasks();
   const { texts } = useLanguage();
 
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ export const TaskList = () => {
   };
 
   const handleEditClick = (task) => {
-    setTaskBeingEdited(task); // ❗ ahora guardamos la tarea a editar
+    setTaskBeingEdited(task); 
     navigate('/tasks/' + task.id);
   };
 
@@ -42,8 +42,19 @@ export const TaskList = () => {
         <Button label={texts.buttons.orderByPriority} parentMethod={orderByPriority} />
         <Button label={texts.buttons.orderByStatus} parentMethod={orderByStatus} />
       </div>
+      <div className="filter">
+                <label htmlFor="options">{texts.selectOptions.label}</label>
+                <br />
+                <br />
+                <select id='selectOptions' name={texts.selectOptions} onChange={(e)=>{filterByStatus(e.target.value)}}>
+                    <option value="all">{texts.selectOptions.all} </option>
+                    <option value="completed">{texts.selectOptions.completed}</option>
+                    <option value="in progress">{texts.selectOptions.inProgress}</option>
+                    <option value="pending">{texts.selectOptions.pending}</option>
+                </select>
+        </div>
       <div className="task-list-container">
-        {tasks.map((task, index) => (
+        {tasks.filter(task => statusFilter === 'all' || task.status === statusFilter).map((task, index) => (
           <div key={index} className="card">
             <h3>{texts.taskList.taskTitle}: {task.title}</h3>
             <p>{task.description}</p>
