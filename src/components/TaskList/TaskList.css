@@ -4,7 +4,6 @@
   gap: 2rem; 
   padding: 20px;
   justify-items: center; 
-  margin-top: 5rem;
 }
 
 .card {
@@ -38,13 +37,13 @@
   color: #000000;
   font-size: large;
 }
-.buttons{
-    
-    padding: 0.25rem;
-    display: grid;
-    gap: 20px;
-    
 
+.buttons{
+    display: grid;
+    max-width: fit-content;
+    position: fixed;
+    right: 5%;
+    gap: 1rem;
 }
 .taskButtons{
     display: grid;
@@ -52,10 +51,14 @@
     gap: 1rem; 
     justify-items: center;  
 }
-.filter {
-    display: flex;
-    justify-content: center;
-}
+
+ .filter{
+  display: flex;
+  justify-content: start;
+  position: fixed;
+  left: 5%;
+  top: 8%;
+ }
 
 .filter label {
     font-weight: 600;
@@ -88,4 +91,145 @@
 
 .favoriteStar.favorite {
     color: gold;           
+}
+
+@media (max-width:1920px) and (max-height:800px){
+  .buttons{
+    display: grid;
+    max-width: fit-content;
+    position: fixed;
+    right: 5%
+}
+
+ .filter{
+  justify-content: start;
+  position: fixed;
+  left: 5%;
+  top: 12%;
+ }
+ .task-list-container{
+  grid-template-columns: repeat(2, 1fr); 
+ }
+
+ .card{
+  max-height: 380px;
+ }
+
+}.task-list-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 2rem; 
+  padding: 20px;
+  justify-items: center; 
+}
+
+.card {
+  background-color: #dedede; 
+  color: #000000;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  padding: 20px;
+  width: 100%; 
+  max-width: 360px; 
+  box-sizing: border-box;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-weight: bold;
+  margin-bottom: 8px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 6px;
+}
+
+.card p {
+  margin: 0.75rem;
+  font-weight: 300;
+  color: #000000;
+  font-size: large;
+}
+
+.buttons{
+    display: grid;
+    max-width: fit-content;
+    position: fixed;
+    right: 5%;
+    gap: 1rem;
+}
+.taskButtons{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1rem; 
+    justify-items: center;  
+}
+
+ .filter{
+  display: flex;
+  justify-content: start;
+  position: fixed;
+  left: 5%;
+  top: 8%;
+ }
+
+.filter label {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 0.95rem;
+    position: absolute;
+}
+
+.filter select {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    width: fit-content;
+    position: relative; 
+    top: 2rem;
+}
+
+.filter select option {
+    padding: 0.5rem;
+}
+.favoriteStar {
+    cursor: pointer;       
+    font-size: 3rem;     
+    color: rgb(0, 0, 0);          
+    transition: color 0.2s ease;  
+}
+
+.favoriteStar.favorite {
+    color: gold;           
+}
+
+@media (max-width:1920px) and (max-height:800px){
+  .buttons{
+    display: grid;
+    max-width: fit-content;
+    position: fixed;
+    right: 5%
+}
+
+ .filter{
+  justify-content: start;
+  position: fixed;
+  left: 5%;
+  top: 12%;
+ }
+ .task-list-container{
+  grid-template-columns: repeat(2, 1fr); 
+ }
+
+ .card{
+  max-height: 380px;
+ }
+
 }
