@@ -95,6 +95,23 @@ button:focus-visible {
   color:#fff;
 }
 
+.dark form input{
+  background-color: #343434;
+}
+
+.dark form select{
+  background-color: #343434;
+}
+
+.dark form{
+  background-color: #4e4d4d;
+}
+
+.dark form label{
+  color: #fff;
+}
+
+
 .light {
   background-color: #fff;
   color: #000;
