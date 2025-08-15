@@ -5,7 +5,7 @@ export const Task = ({ texts, textsButtons, tasks, onEditTask ,onAddTask}) => {
   const task = tasks.find(task => task.id === id);
 
   return (
-    <div className="card">
+    <>
       <TaskForm
         texts={texts}
         textsButtons={textsButtons}
@@ -13,6 +13,6 @@ export const Task = ({ texts, textsButtons, tasks, onEditTask ,onAddTask}) => {
         taskBeingEdited={task}
         onAddTask={onAddTask} 
       />
-    </div>
+    </>
   );
 }
